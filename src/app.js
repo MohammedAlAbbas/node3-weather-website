@@ -7,6 +7,7 @@ import weatherUtility from './utils/weatherUtility.js';
 import Response from './classes/Response.js';
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 const __dirname = path.dirname(__filename); // get the name of the directory
@@ -63,11 +64,6 @@ app.get('/weather', async (req, res) => {
 // app.get('*', (req, res) => {
 //     res.send('My 404 page');
 // });
-
-app.listen(3000, () => {
-    console.log(chalk.inverse.green('Server is running on port 3000.'));
-});
-
 // app.get('', (req, res) => {
 //     res.send('<h1>Testt</h1>');
 // });
@@ -82,3 +78,7 @@ app.listen(3000, () => {
 // app.get('/about', (req, res) => {
 //     res.send('about page');
 // });
+
+app.listen(port, () => {
+    console.log(chalk.inverse.green(`Server is running on port ${port}.`));
+});

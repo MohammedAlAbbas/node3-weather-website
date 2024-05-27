@@ -21,7 +21,7 @@ async function printCurrentWeather(city) {
 
 async function getCurrentWeather(city) {
     try {
-      const response = await axios.get(`${baseUrl}/weather`, {
+      const response = await axios.get(`/weather`, {
         params: {
             city
         }
